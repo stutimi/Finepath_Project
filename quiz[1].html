@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background: #001e4d;
+            color: #fff;
+        }
+        .app {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            margin: 100px auto;
+            border-radius: 10px;
+            padding: 30px;
+            color: #001e4d;
+        }
+        .app h1 {
+            font-size: 25px;
+            font-weight: 600;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        .quiz h2 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .btn {
+            background: #fff;
+            color: #222;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid #222;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: left;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover:not([disabled]) {
+            background: #222;
+            color: #fff;
+        }
+        .btn:disabled {
+            cursor: no-drop;
+        }
+        #next-btn {
+            background: #001e4d;
+            color: #fff;
+            font-weight: 500;
+            width: 150px;
+            border: 0;
+            padding: 10px;
+            margin: 20px auto 0;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+        }
+        .correct {
+            background: #9aeabc;
+        }
+        .incorrect {
+            background: #ff9393;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h1>Finance Quiz</h1>
+        <div class="quiz">
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What does UPI stand for?", answers: [{ text: "Unified Payments Interface", correct: true }, { text: "Universal Payment India", correct: false }, { text: "Unique Payment Identification", correct: false }, { text: "Union Payment India", correct: false }]},
+            { question: "Which app is commonly used for UPI payments in India?", answers: [{ text: "WhatsApp", correct: false }, { text: "Google Pay", correct: true }, { text: "Facebook", correct: false }, { text: "LinkedIn", correct: false }]},
+            { question: "What is needed to make a UPI transaction?", answers: [{ text: "Cash", correct: false }, { text: "Cheque", correct: false }, { text: "UPI PIN", correct: true }, { text: "Debit Card", correct: false }]},
+            { question: "Which of these is not a digital payment method?", answers: [{ text: "UPI", correct: false }, { text: "NEFT", correct: false }, { text: "Cash", correct: true }, { text: "Mobile Wallets", correct: false }]},
+            { question: "Which of these is an example of a mobile wallet in India?", answers: [{ text: "Paytm", correct: true }, { text: "Calculator", correct: false }, { text: "SMS App", correct: false }, { text: "Camera App", correct: false }]},
+            { question: "What is the maximum transaction limit per day through UPI in India?", answers: [{ text: "₹1,000", correct: false }, { text: "₹10,000", correct: false }, { text: "₹1 Lakh", correct: true }, { text: "₹10 Lakh", correct: false }]},
+            { question: "Which app is used for small transactions and works without internet?", answers: [{ text: "UPI Lite", correct: true }, { text: "GPay", correct: false }, { text: "Amazon Pay", correct: false }, { text: "WhatsApp Pay", correct: false }]},
+            { question: "What is a QR code used for in digital payments?", answers: [{ text: "Scanning barcodes", correct: false }, { text: "Making online payments", correct: true }, { text: "Taking selfies", correct: false }, { text: "Watching videos", correct: false }]},
+            { question: "Which bank operates the UPI network in India?", answers: [{ text: "State Bank of India", correct: false }, { text: "Reserve Bank of India", correct: false }, { text: "National Payments Corporation of India (NPCI)", correct: true }, { text: "Bank of India", correct: false }]},
+            { question: "Which is not required for setting up UPI?", answers: [{ text: "Bank Account", correct: false }, { text: "Phone Number linked to bank account", correct: false }, { text: "Email Address", correct: true }, { text: "UPI App", correct: false }]}
+        ];
+
+        const questionElement = document.getElementById("question");
+        const answerButtons = document.getElementById("answer-buttons");
+        const nextButton = document.getElementById("next-btn");
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function startQuiz(){
+            currentQuestionIndex = 0;
+            score = 0;
+            nextButton.innerHTML = "Next";
+            showQuestion();
+        }
+
+        function showQuestion(){
+            resetState();
+            let currentQuestion = questions[currentQuestionIndex];
+            questionElement.innerHTML = currentQuestion.question;
+
+            currentQuestion.answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerHTML = answer.text;
+                button.classList.add("btn");
+                answerButtons.appendChild(button);
+                if(answer.correct) button.dataset.correct = answer.correct;
+                button.addEventListener("click", selectAnswer);
+            });
+        }
+
+        function resetState(){
+            nextButton.style.display = "none";
+            while(answerButtons.firstChild){
+                answerButtons.removeChild(answerButtons.firstChild);
+            }
+        }
+
+        function selectAnswer(e){
+            const selectedBtn = e.target;
+            const isCorrect = selectedBtn.dataset.correct === "true";
+            if(isCorrect) {
+                selectedBtn.classList.add("correct");
+                score++;
+            } else {
+                selectedBtn.classList.add("incorrect");
+            }
+            Array.from(answerButtons.children).forEach(button => {
+                if(button.dataset.correct === "true") button.classList.add("correct");
+                button.disabled = true;
+            });
+            nextButton.style.display = "block";
+        }
+
+        function showScore(){
+            resetState();
+            questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+            nextButton.innerHTML = "Play Again";
+            nextButton.style.display = "block";
+        }
+
+        function handleNextButton(){
+            currentQuestionIndex++;
+            if(currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showScore();
+            }
+        }
+
+        nextButton.addEventListener("click", () => {
+            if(currentQuestionIndex < questions.length) {
+                handleNextButton();
+            } else {
+                startQuiz();
+            }
+        });
+
+        startQuiz();
+    </script>
+</body>
+</html>

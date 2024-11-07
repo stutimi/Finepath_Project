@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Professional Finance Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://www.freepik.com/free-photo/business-financial-chart-digital-network_10310404.htm');
+            background-size: cover; 
+            background-position: center; 
+            color: #000000;
+            scroll-behavior: smooth;
+        }
+        
+        /* Top Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin: 10px 0 20px 0;
+        }
+
+        .button {
+            background-color: #4a4aff;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0000ff;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #003d66;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Header */
+        .finpath-heading {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 80px;
+            color: #003d66;
+            font-weight: bold;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .content {
+            width: 60%;
+            text-align: left;
+            margin: auto;
+        }
+
+        .image-container {
+            width: 40%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #003d66;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003d66;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .content {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #003d66;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+            color: #003d66;
+        }
+
+        /* New Styles for Enhanced Sections */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .service {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+        }
+
+        .service h2 {
+            font-size: 18px;
+            color: #ffcc00;
+        }
+
+        .service p {
+            font-size: 14px;
+            color: #fff;
+        }
+        #chatbotPopup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 600px;
+            display: none; /* Hidden by default */
+            z-index: 1000;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        #chatbotPopup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Close Button Styles */
+        #closeChatbot {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chatbotPopup">
+        <button id="closeChatbot">&times;</button>
+        <iframe src="chatbot.html"></iframe> <!-- Relative link to chatbot.html -->
+    </div>
+
+    <!-- Top Container -->
+    <div class="container">
+        <h1>PROFESSIONAL FINANCE SERVICES</h1>
+        <h2>EXPERIENCE THE HIGHEST LEVEL</h2>
+        <a href="#section5" class="button">CONTACT US</a>
+    </div>
+    <div class="footer">
+        Image from <a href="https://www.freepik.com" target="_blank">Freepik</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#section1">Home</a>
+        <a href="#section2">Our Services</a>
+        <a href="#section3">Financial Planning</a>
+        <a href="#section4">Client Testimonials</a>
+        <a href="#section5">Contact Us</a>
+        <a href="financial-education.html">Financial Education</a>
+        <a href="expense.html" target="_blank">Expense Tracker</a>
+        <a href="quiz.html" target="_blank">Quiz</a>
+        <a href="tracker.html" target="_blank">Track Your Expenses</a>
+    </nav>
+
+    <h1 class="finpath-heading">Welcome to FinPath</h1>
+    
+
+    <!-- Section 1: Comprehensive Financial Solutions -->
+    <section id="section1">
+        <div class="content">
+            <h1>Comprehensive Financial Solutions</h1>
+            <div class="card">
+                <h2>Personalized Financial Planning</h2>
+                <p>Customized financial plans tailored to your unique goals and needs.</p>
+            </div>
+            <div class="card">
+                <h2>Investment Strategies</h2>
+                <p>Expert guidance on building and managing a diversified investment portfolio.</p>
+            </div>
+            <div class="card">
+                <h2>Retirement Planning</h2>
+                <p>Strategies to ensure a secure and comfortable retirement.</p>
+            </div>
+            <div class="card">
+                <h2>Risk Management</h2>
+                <p>Identify and mitigate risks to protect your assets and investments.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://www.freepik.com/free-photo/business-financial-chart-digital-network_10310404.htm" alt="Financial services illustration">
+        </div>
+    </section>
+
+    <!-- Section 2: Our Services -->
+    <section id="section2" style="background-color: #0d1b2a;">
+        <div class="container">
+            <div class="image-container">
+                <img src="https://www.freepik.com/free-photo/two-businessmen-analyzing-graphs_10312534.htm" alt="Financial advisory services">
+            </div>
+            <div class="content">
+                <h1>Our Services</h1>
+                <div class="card">
+                    <h2>Wealth Management</h2>
+                    <p>Comprehensive management of your wealth to grow your assets.</p>
+                </div>
+                <div class="card">
+                    <h2>Tax Planning</h2>
+                    <p>Strategic tax planning to minimize liabilities and maximize savings.</p>
+                </div>
+                <div class="card">
+                    <h2>Estate Planning</h2>
+                    <p>Effective strategies for managing and transferring your estate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Financial Planning -->
+    <section id="section3">
+        <div class="content">
+            <h1>Financial Planning</h1>
+            <p>Our approach to financial planning combines thorough research with real-world experience. We prioritize your financial goals and offer customized strategies to achieve them.</p>
+        </div>
+    </section>
+
+    <!-- Section 4: Client Testimonials -->
+    <section id="section4" style="background-color: #003d66; color: white;">
+        <div class="content">
+            <h1>Client Testimonials</h1>
+            <div class="services">
+                <div class="service">
+                    <h2>John D.</h2>
+                    <p>FinPath helped me secure my family's future. Their expertise is unparalleled!</p>
+                </div>
+                <div class="service">
+                    <h2>Sarah M.</h2>
+                    <p>Highly recommend! Professional and attentive to my needs.</p>
+                </div>
+                <div class="service">
+                    <h2>Michael B.</h2>
+                    <p>Excellent financial planning services that truly make a difference!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Contact Us -->
+    <section id="section5">
+        <div class="content">
+            <h1>Sign Up</h1>
+            <form id="signupForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="password" id="password" placeholder="Your Password" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FinPath. All rights reserved.</p>
+    </footer>
+
+    <script>
+         // Show chatbot popup when the page loads
+         window.onload = function() {
+            document.getElementById("chatbotPopup").style.display = "block";
+        };
+
+        // Close chatbot popup
+        document.getElementById("closeChatbot").onclick = function() {
+            document.getElementById("chatbotPopup").style.display = "none";
+        };
+
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Store the data in local storage
+            const userData = { name, email, password };
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            console.log('User data stored:', userData); // Log the data for verification
+
+            // Optionally, clear the form
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

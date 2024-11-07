@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Existing styles... */
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1A1A40;
+            color: #FFFFFF;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .title {
+            font-size: 14px;
+            color: #A0A0C0;
+        }
+
+        .header .menu {
+            font-size: 24px;
+        }
+
+        .budget {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .budget-subtext {
+            color: #A0A0C0;
+            font-size: 14px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 48%;
+            border-radius: 10px;
+            padding: 20px;
+            color: #FFFFFF;
+        }
+
+        .card.dribbble {
+            background-color: #FF5A5F;
+        }
+
+        .card.visa {
+            background-color: #4A4A6A;
+        }
+
+        .card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card .card-header .card-logo {
+            font-size: 24px;
+        }
+
+        .card .card-header .card-number {
+            font-size: 14px;
+        }
+
+        .card .card-body {
+            margin-top: 20px;
+        }
+
+        .card .card-body .card-title {
+            font-size: 14px;
+            color: #A0A0C0;
+        }
+
+        .card .card-body .card-amount {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .card .card-footer .validity {
+            font-size: 14px;
+            color: #A0A0C0;
+        }
+
+        .vultr-services {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #2A2A50;
+            border-radius: 10px;
+        }
+
+        .vultr-services h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vultr-service {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .vultr-service i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #FF5A5F;
+        }
+
+        /* Add any additional styles as needed */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">LAST YEAR BUDGET</div>
+            <div class="menu"><i class="fas fa-ellipsis-v"></i></div>
+        </div>
+        <div class="budget">$51,329.99</div>
+        <div class="budget-subtext">(~10% > 2018)</div>
+        <div class="cards">
+            <div class="card dribbble">
+                <div class="card-header">
+                    <div class="card-logo"><i class="fab fa-dribbble"></i></div>
+                    <div class="card-number">**** **** **** 9076</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Dribbble card</div>
+                    <div class="card-amount">$8,003.11</div>
+                </div>
+                <div class="card-footer">
+                    <div class="validity">24/9 valid</div>
+                </div>
+            </div>
+            <div class="card visa">
+                <div class="card-header">
+                    <div class="card-logo">VISA</div>
+                    <div class="card-number">**** **** **** 4519</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Credit card</div>
+                    <div class="card-amount">$1,461.08</div>
+                </div>
+                <div class="card-footer">
+                    <div class="validity">23/2 valid</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vultr Cloud Services Section -->
+        <div class="vultr-services">
+            <h2>Vultr Cloud Services</h2>
+            <div class="vultr-service">
+                <i class="fas fa-server"></i>
+                <div>
+                    <strong>Compute Instances:</strong> Scalable infrastructure for hosting your applications.
+                </div>
+            </div>
+            <div class="vultr-service">
+                <i class="fas fa-database"></i>
+                <div>
+                    <strong>Managed Database:</strong> Secure and reliable database management.
+                </div>
+            </div>
+            <div class="vultr-service">
+                <i class="fas fa-cloud"></i>
+                <div>
+                    <strong>Object Storage:</strong> Cost-effective storage for large amounts of data.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional existing sections and footer can be added here -->
+</body>
+
+</html>

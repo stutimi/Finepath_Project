@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fintech Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F7FB;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .sidebar ul li a.active,
+        .sidebar ul li a:hover {
+            color: #6f42c1;
+            font-weight: bold;
+        }
+
+        .sidebar .profile {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .sidebar .profile div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .profile div span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .header .balance {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .balance div {
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .header .balance div h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .header .balance div p {
+            margin: 0;
+            color: #666;
+        }
+
+        .financial-insights {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .financial-insights h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .financial-insights .chart {
+            height: 200px;
+            background-color: #E5E7EB;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .financial-insights .chart .bar {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            background-color: #3B82F6;
+        }
+
+        .financial-insights .chart .bar.expense {
+            background-color: #EF4444;
+        }
+
+        .recent-transactions {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recent-transactions h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .recent-transactions table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .recent-transactions table th,
+        .recent-transactions table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .recent-transactions table th {
+            background-color: #F3F4F6;
+        }
+
+        .recent-transactions table tr:nth-child(even) {
+            background-color: #F9FAFB;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .menu a.active,
+        .menu a:hover {
+            color: #6f42c1;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Fintech</h2>
+        <ul>
+            <li>
+                <i class="fas fa-tachometer-alt"></i>
+                <a href="#" id="dashboard-tab" class="active">Dashboard</a>
+            </li>
+            <li>
+                <i class="fas fa-exchange-alt"></i>
+                <a href="#" id="expense-tab">Transactions</a>
+            </li>
+            <li>
+                <i class="fas fa-wallet"></i>
+                <a href="#">Budget Planner</a>
+            </li>
+            <li>
+                <i class="fas fa-university"></i>
+                <a href="#">Accounts</a>
+            </li>
+            <li>
+                <i class="fas fa-file-alt"></i>
+                <a href="#">Reports</a>
+            </li>
+            <li>
+                <i class="fas fa-bell"></i>
+                <a href="#">Alerts</a>
+            </li>
+        </ul>
+        <div class="profile">
+            <img src="https://storage.googleapis.com/a1aa/image/UEvPuFWkAi5RA58iYugc1yQJA3cfM1fITI7g25vO6j7DUZpTA.jpg" alt="Profile picture" />
+            <div>
+                <span>Stuti Mishra</span>
+                <span>stutimishra@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Good Morning, Stuti</h1>
+            <div class="balance">
+                <div>
+                    <h2>$30,192.98</h2>
+                    <p>Total Balance</p>
+                </div>
+                <div>
+                    <h2>$40,000.00</h2>
+                    <p>Income</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="#" id="dashboard-tab-link" class="active">Dashboard</a>
+            <a href="#" id="expense-tab-link">Expense Tracker</a>
+        </div>
+
+        <div class="tab-content active" id="dashboard">
+            <div class="financial-insights">
+                <h2>Financial Insights</h2>
+                <div class="chart">
+                    <div class="bar" style="left: 10px; height: 50%;"></div>
+                    <div class="bar expense" style="left: 40px; height: 30%;"></div>
+                    <div class="bar" style="left: 70px; height: 70%;"></div>
+                    <div class="bar expense" style="left: 100px; height: 40%;"></div>
+                    <div class="bar" style="left: 130px; height: 60%;"></div>
+                    <div class="bar expense" style="left: 160px; height: 20%;"></div>
+                </div>
+            </div>
+
+            <div class="recent-transactions">
+                <h2>Recent Transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Account</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Paypal</td>
+                            <td>Platinum</td>
+                            <td>08 Aug 2023 5:02 AM</td>
+                            <td>+ $1,240.41</td>
+                        </tr>
+                        <tr>
+                            <td>Starbucks</td>
+                            <td>Gold</td>
+                            <td>10 Aug 2023 8:15 AM</td>
+                            <td>- $5.00</td>
+                        </tr>
+                        <tr>
+                            <td>Uber</td>
+                            <td>Platinum</td>
+                            <td>12 Aug 2023 1:45 PM</td>
+                            <td>- $12.50</td>
+                        </tr>
+                        <tr>
+                            <td>Amazon</td>
+                            <td>Standard</td>
+                            <td>14 Aug 2023 4:30 PM</td>
+                            <td>- $45.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-content" id="expense-tracker">
+            <h2>Expense Tracker</h2>
+            <p>Track your expenses here.</p>
+            <!-- Add your expense tracker content here -->
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.getElementById('dashboard-tab-link').addEventListener('click', function () {
+            document.getElementById('dashboard').classList.add('active');
+            document.getElementById('expense-tracker').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('expense-tab-link').classList.remove('active');
+        });
+
+        document.getElementById('expense-tab-link').addEventListener('click', function () {
+            document.getElementById('expense-tracker').classList.add('active');
+            document.getElementById('dashboard').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('dashboard-tab-link').classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>
