@@ -10,11 +10,13 @@ Secure Cloud-Based Infrastructure: Protect your data with advanced security prot
 FinPath is more than just an app; it's a guide to achieving financial independence with confidence and ease. Join us in transforming personal finance, one step at a time!
 <h2>Dashboard</h2>
 <a href="https://ibb.co/prJGd2R"><img src="https://i.ibb.co/wrM34yw/Screenshot-2025-01-06-090158.png" alt="Screenshot-2025-01-06-090158" border="0"></a>
-<h2>Expence</h2>
+<h2>Expense</h2>
 <a href="https://ibb.co/cysDhYC"><img src="https://i.ibb.co/ZfbWz2Y/Screenshot-2025-01-06-085818.png" alt="Screenshot-2025-01-06-085818" border="0"></a>
-<h2>quiz</h2>
+<h2>Board</h2>
 <a href="https://ibb.co/8bjtky8"><img src="https://i.ibb.co/xYMdZn5/Screenshot-2025-01-06-090015.png" alt="Screenshot-2025-01-06-090015" border="0"></a>
-<h2>tracker</h2>
+<h2>quiz</h2>
 <a href="https://ibb.co/N2SFfjP"><img src="https://i.ibb.co/JjQc874/Screenshot-2025-01-06-090333.png" alt="Screenshot-2025-01-06-090333" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>simple image host</a><br />
+<h2>Expense Tracker</h2>
 <a href="https://ibb.co/0Dfn76H"><img src="https://i.ibb.co/gjDr2fk/Screenshot-2025-01-06-090715.png" alt="Screenshot-2025-01-06-090715" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>free https image hosting</a><br />
+<h2>Voice Chatboat</h2>
 <a href="https://ibb.co/vkqp60k"><img src="https://i.ibb.co/9Wg6kQW/Screenshot-2025-01-06-074748.png" alt="Screenshot-2025-01-06-074748" border="0"></a>
