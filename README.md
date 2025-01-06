@@ -1,7 +1,7 @@
 # Finepath_Project
  This repository contains the initial development phase of the project, including a working prototype of the application along with the complete codebase.
 FinPath: Your Gateway to Financial Independence
-Welcome to FinPath, a comprehensive financial management platform designed to empower individuals and communities on their journey to financial security and independence. Created by Anshuman Dubey and Stuti Mishra, FinPath combines powerful tools and educational resources in one seamless platform, making personal finance accessible, engaging, and secure for users at all stages of their financial journey.
+Welcome to FinPath, a comprehensive financial management platform designed to empower individuals and communities on their journey to financial security and independence. Created by Me and Anshuman Dubey, FinPath combines powerful tools and educational resources in one seamless platform, making personal finance accessible, engaging, and secure for users at all stages of their financial journey.
 
 Key Features
 User-Friendly Financial Tracking: Track your income, expenses, savings, and investments with an intuitive interface designed to simplify financial management.
